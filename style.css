@@ -2,19 +2,47 @@
     box-sizing: border-box;
 }
 
+header {
+    background-color: #60A561;
+    color: #6B0504;}
+
+section {border: solid, 1px, black;}  
+
+#inspiration {grid-area: inspo;
+    padding-top: 20px;
+    padding-bottom: 200px;
+    background-color: #C7F0BD;}
+
+
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    color: #4C5B61;
+    background-color: #FFE3DC
 }
 header, section {
     padding: 20px;
+    ;
 }
+
+
 p, li {
     line-height: 1.5em;
 }
 
-#inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+div {
+    text-indent: 20px}
+
+    
+h1, h2 {font-weight: 500;
+text-transform: uppercase}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=CormorantGaramond: 100,100i,300,300i,400,400i,700,700i,900,900i|Fredericka+the+Great&display=swap');
+
+body {
+   font-family: 'Cormorant Garamond', serif;
+   font-weight: 100;
+/*    font-size: 1.3em; */
 }
+
