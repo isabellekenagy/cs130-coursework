@@ -27,7 +27,7 @@ header, nav {
    height: 100%;
    flex-wrap: wrap;
 }
-header, .nav. .content {
+header, .nav, .content {
    transition-duration: 1.4s;
 }
 header {
