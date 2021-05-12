@@ -4,20 +4,22 @@
 
 header {
     background-color: #60A561;
-    color: #6B0504;}
+    color: rgb(255, 227, 220);}
+
 
 section {border: solid, 1px, black;}  
 
 #inspiration {grid-area: inspo;
     padding-top: 20px;
     padding-bottom: 200px;
-    background-color: #C7F0BD;}
+    background-color:rgb(255, 227, 220);
+    border:  5px solid #60A561;}
 
 
 body {
     margin: 0px;
     color: #4C5B61;
-    background-color: #FFE3DC
+    background-color: rgb(255, 227, 220)
 }
 header, section {
     padding: 20px;
