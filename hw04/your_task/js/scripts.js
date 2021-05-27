@@ -24,14 +24,14 @@ const getTracks = (term) => {
 };
 
 const getAlbums = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+    url = baseURL + "?type=album&q=" + term;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => displayAlbums(data));
 };
 
 const getArtist = (term) => {
-    url = baseURL + "?type=artists&q=" + term;
+    url = baseURL + "?type=artist&q=" + term;
     fetch(url)
         .then(response => response.json())
         .then(data => displayArtist(data[0]));
@@ -47,8 +47,23 @@ document.querySelector('#search').onkeyup = (ev) => {
     }
 };
 
+const playTrack = (ev) => {
+    //console.log(ev.currentTarget);
+    const elem = ev.currentTarget;
+    //const previewURl = elem.dataset.previewTrack;
+    const preview_url = elem.getAttribute('data-preview-track');
+    console.log(preview_url);
+    if (preview_url) {
+    audioPlayer.setAudioFile(preview_url);
+    audioPlayer.play();}
+    else {
+        console.log('there is no preview available for this track.')
+    }
+    document.querySelector('footer .track-item').innerHTML = elem.innerHTML;
+};
+
 const displayTracks = (foundtracks) => {
-    if (foundtracks[0] == null) {
+    if (foundtracks == null) {
         document.querySelector("#tracks").innerHTML - "no tracks found :(";
     } else {
         document.querySelector("#tracks").innerHTML = "";
@@ -63,8 +78,14 @@ const displayTracks = (foundtracks) => {
                         </div>
                     </section>`;
                 document.querySelector("#tracks").innerHTML+=template;
-        }}  
-    };
+        }
+    
+    
+    for (const elem of document.querySelectorAll('.track-item.preview')) {
+        elem.onclick = playTrack;
+    }
+    
+}};
 
 const displayArtist = (art) => {
     if (art == null) {
@@ -83,3 +104,25 @@ const displayArtist = (art) => {
     </section>`;
     document.querySelector('#artist').innerHTML = template;
 }}
+
+const displayAlbums = (albumList) => {
+    if (albumList == null) {
+        document.querySelector("#albums").innerHTML - "no albums found";
+    } else {
+        document.querySelector("#albums").innerHTML = "";
+        for (item in albumList) {
+            template = `<section class="album-card" id="${albumList[item].id}">
+            <div>
+                <img src="${albumList[item].image_url}">
+                <h3>${albumList[item].name}</h3>
+                <div class="footer">
+                    <a href="${albumList[item].spotify_url}" target="_blank">
+                    view on spotify
+                    </a>
+                </div>
+            </div>
+        </section>`;
+        document.querySelector('#albums').innerHTML+=template;
+        }}  
+    };
+

@@ -35,7 +35,7 @@ body {
 }
 aside {
     grid-area: left;
-    border-right: dotted #999 1px;    
+    border-right: dotted #999 1px;     
 }
 header {
     position: fixed;
@@ -144,7 +144,7 @@ header .fa-search {
    *********************************************************** */
 
 #tracks, #artist, #albums {
-    border: dotted 1px #ccc;
+    /* border: dotted 1px #ccc; */
     min-height: 100px;
 }
 
