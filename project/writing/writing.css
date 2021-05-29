@@ -1,0 +1,148 @@
+body {
+    height:100%;
+    margin:0;
+    background-color: #FFFAEA;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 60px calc(100vh - 10px) 80px;
+    grid-template-areas:
+       "nav"
+       "pages"
+       "gallery"
+       "bottom";
+    height: 100vh;
+}
+
+.menu {
+    grid-area: pages;
+    width: 100%;
+    height: 40px;
+    background-color: #573E30;
+}
+.content {
+    grid-area: gallery;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+footer {
+    grid-area: bottom;
+}
+
+nav {
+    grid-area: nav;
+    background: #b1c381;
+    /* position: fixed; */
+    width: 100%;
+    height: 85px;
+    line-height: 60px;
+    color: #1d3304;
+    z-index: 101;
+}
+nav h1, h2 {
+    color: #1d3304;
+    margin: 0px;
+    line-height: 40px;
+    text-align: center;
+    font-family: 'Fonseca', sans-serif;                              
+}
+nav h1{
+    padding-top: 10px;;
+    font-size: xx-large;
+}
+
+nav h2 {
+    font-size: large;
+}
+
+.menu h3, h4, h5, h6 {
+    text-align: center;
+    color: #FFE8D6;
+    font-family: 'Fonseca', sans-serif;
+    padding-top: 11px;  
+    font-size: medium;
+
+}
+
+footer h1{
+    font-family: 'Fonseca', sans-serif;
+    color:#1d3304;
+    font-size: smaller;
+}
+
+.cards {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 33%;
+    padding: 10px;
+}
+
+.card > div {
+    /* border: solid 1px; */
+    padding: 10px;
+}
+
+.image-div {
+   background-size: cover; 
+   width: 100%;
+   height: 250px;
+}
+
+.caption {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    color: #0E273C;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+footer > div {
+    padding-left: 50vw;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+
+footer h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+.card:hover .image-div {
+    opacity: 20%;
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .card{
+    width: 50%;
+    }
+    .image-div {
+        height: 350px;
+     }
+}
+
+@media screen and (max-width: 700px) {
+    .card{
+    width: 100%;
+    }
+    .image-div {
+        height: 450px;
+     }
+}
