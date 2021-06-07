@@ -1,0 +1,139 @@
+body {
+    height:100%;
+    margin:0;
+    background-color: #FFFAEA;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+html {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 60px 600px 300px 100px;
+    grid-template-areas:
+       "nav"
+       "pages"
+       "bio"
+       "fun"
+       "bottom";
+    height: 100vh;
+}
+
+nav {
+    grid-area: nav;
+    background: #b1c381;
+    width: 100%;
+    height: 85px;
+    line-height: 60px;
+    color: #1d3304;
+    z-index: 101;
+}
+nav h1, h2 {
+    color: #1d3304;
+    margin: 0px;
+    line-height: 40px;
+    text-align: center;
+    font-family: 'Fonseca', sans-serif;                              
+}
+nav h1{
+    padding-top: 10px;;
+    font-size: xx-large;
+}
+
+nav h2 {
+    font-size: large;
+}
+
+
+.menu {
+    grid-area: pages;
+    width: 100%;
+    height: 35px;
+    background-color: #573E30;
+}
+.bio {
+    grid-area: bio;
+    font-family: 'Montserrat', sans-serif;
+    color: #0E273C
+}
+
+.fun {grid-area: fun;
+    font-family: 'Montserrat', sans-serif;
+    color: #0E273C;
+    text-align: left;}
+
+.bio > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    padding-right: 30px;
+    padding-left: 50px;
+}
+
+p {
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer {
+    grid-area: bottom;
+}
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+
+.menu h3 {
+    text-align: center;
+    color: #FFE8D6;
+    font-family: 'Fonseca', sans-serif;
+    padding-top: 11px;  
+    font-size: medium;
+
+}
+
+footer h1{
+    font-family: 'Fonseca', sans-serif;
+    color:#1d3304;
+    font-size: smaller;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+footer > div {
+    padding-left: 50vw;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+
+
+h4 {
+    color: #B1C381;
+    font-size: large;
+    font-family: 'Fonseca', sans-serif;
+    text-align: center;
+}
+
+h3 > a {
+    color: #FFFAEA;
+    text-decoration: none;
+}
+
+li > a{
+    color: #0E273C;
+}
+
+p > a {
+    color: #0E273C;
+}

@@ -23,7 +23,7 @@ main {
 .menu {
     grid-area: pages;
     width: 100%;
-    height: 40px;
+    height: 35px;
     background-color: #573E30;
 }
 .content {
@@ -96,6 +96,7 @@ footer h1{
 
 .image-div {
    background-size: cover; 
+   background-position: center;
    width: 100%;
    height: 250px;
 }
@@ -126,10 +127,16 @@ footer h1 {
 }
 
 
+h3 > a {
+    color: #FFFAEA;
+}
+
+a {
+    text-decoration: none;
+}
 
 
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .card{
     width: 50%;
     }
